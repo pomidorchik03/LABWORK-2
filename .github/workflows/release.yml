@@ -17,6 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Install lib
+        if: runner_os == 'Lunix'
+        run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
+          
+      - name: Install lib
+        if: runner_os == 'Windows'
+        run: choco install boost -y
+
+
       - name: Init
         run: cmake . -DPATCH_VERSION=${{ github.run_number }}
 
