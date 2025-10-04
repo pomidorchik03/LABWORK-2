@@ -5,7 +5,7 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(lab2 VERSION ${PROJECT_VERSION})
 
-find_package(Boost CONFIG COMPONENTS unit_test_framework REQUIRED)
+find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 
 add_executable(lab2 main.cpp)
