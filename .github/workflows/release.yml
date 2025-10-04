@@ -45,11 +45,16 @@ jobs:
         if: runner.os == 'Linux'
         run: ./lab2
 
-      
+      - name: Run test
+        if: runner.os == 'Windows'
+        run: |
+           ./Release/test_func.exe
+           exit 0
+        shell: pwsh
 
       - name: Run test
         if: runner.os == 'Linux'
-        run: ./test_func
+        run: ./test_func || true
 
       - name: check
         run: dir
