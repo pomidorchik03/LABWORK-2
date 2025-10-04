@@ -23,7 +23,8 @@ jobs:
           
       - name: Install lib
         if: runner.os == 'Windows'
-        run: choco install boost -y
+        run: choco install boost-msvc-14.3 -y
+
 
 
       - name: Init
