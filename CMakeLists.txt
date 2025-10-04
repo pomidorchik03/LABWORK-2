@@ -14,10 +14,10 @@ add_executable(test_func test.cpp)
 
 
 
-set_target_properties(lab2 lib test_func PROPERTIES
-    CXX_STANDARD 20
-    CXX_STANDARD_REQUIRED ON 
-)
+target_compile_features(lab2 PRIVATE cxx_std_20)
+target_compile_features(lib PRIVATE cxx_std_20)
+target_compile_features(test_func PRIVATE cxx_std_20)
+
 target_include_directories(lib 
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
